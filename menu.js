@@ -152,7 +152,7 @@ function drawMenu() {
 
   ctx.save();
   ctx.fillStyle = '#ffffff';
-  ctx.font = '16px Arial';
+  ctx.font = '20px Nosifer, cursive';
   ctx.textAlign = 'left';
   ctx.textBaseline = 'bottom';
   ctx.fillText('TWÓRCY: Damian Fitał, Patryk Chudoba, Igor Korpalski', 20, canvas.height - 20);
