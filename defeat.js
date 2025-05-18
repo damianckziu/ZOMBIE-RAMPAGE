@@ -106,7 +106,7 @@ function drawDefeat() {
     ctx.translate(canvas.width / 2, canvas.height / 2 - 50);
     ctx.rotate(angle);
 
-    const imageWidth = 400;
+    const imageWidth = 300;
     const imageHeight = (defeatImage.height / defeatImage.width) * imageWidth;
     ctx.drawImage(defeatImage, -imageWidth / 2, -imageHeight / 2, imageWidth, imageHeight);
     ctx.restore();
