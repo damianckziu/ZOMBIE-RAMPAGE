@@ -79,7 +79,7 @@ let nightDuration = 60000;
 let cycleTimer = dayDuration;
 let cycleStartTime = Date.now();
 
-let zombieSpawnInterval = 20000;
+let zombieSpawnInterval = 3000;
 let initialZombieCount = 3;
 let minDistanceBetweenZombies = 40;
 
