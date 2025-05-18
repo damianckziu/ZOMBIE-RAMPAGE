@@ -258,7 +258,6 @@ function update() {
 
   if (!dayTime) {
     shieldItems = [];
-    spawnZombie();
   }
 
   zombies.forEach(zombie => {
