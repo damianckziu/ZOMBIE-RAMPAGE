@@ -92,6 +92,7 @@ let victoryStartTime = null;
 // ZDARZENIA
 // ------------------------------
 window.addEventListener('contextmenu', function(e) {
+  console.log("test");
   e.preventDefault();
 });
 
