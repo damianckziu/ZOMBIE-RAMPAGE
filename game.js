@@ -128,34 +128,45 @@ canvas.addEventListener('mousedown', e => {
 // FUNKCJE DO SPAWN'OWANIA
 // ------------------------------
 function spawnZombie() {
-    let distanceFromPlayer = Math.random() * (canvas.width / 2) + canvas.width / 4;
-    let angle = Math.random() * 2 * Math.PI;
-    let x = player.x + Math.cos(angle) * distanceFromPlayer;
-    let y = player.y + Math.sin(angle) * distanceFromPlayer;
+  const maxTries = 15;
+  let tries = 0;
+  let x, y, angle, distanceFromPlayer;
+  let validPosition = false;
 
-    while (Math.hypot(player.x - x, player.y - y) < 100) {
-      x = player.x + Math.cos(angle) * distanceFromPlayer;
-      y = player.y + Math.sin(angle) * distanceFromPlayer;
+  while (tries < maxTries && !validPosition) {
+    distanceFromPlayer = Math.random() * (canvas.width / 2) + canvas.width / 4;
+    angle = Math.random() * 2 * Math.PI;
+    x = player.x + Math.cos(angle) * distanceFromPlayer;
+    y = player.y + Math.sin(angle) * distanceFromPlayer;
+
+    if (Math.hypot(player.x - x, player.y - y) < 100) {
+      tries++;
+      continue; // za blisko gracza
     }
 
-    let overlap = true;
-    while (overlap) {
-      overlap = false;
-      for (let i = 0; i < zombies.length; i++) {
-        const zombie = zombies[i];
-        const distance = Math.hypot(zombie.x - x, zombie.y - y);
-        if (distance < minDistanceBetweenZombies) {
-          angle = Math.random() * 2 * Math.PI;
-          x = player.x + Math.cos(angle) * distanceFromPlayer;
-          y = player.y + Math.sin(angle) * distanceFromPlayer;
-          overlap = true;
-          break;
-        }
+    let tooClose = false;
+    for (let i = 0; i < zombies.length; i++) {
+      const zombie = zombies[i];
+      if (Math.hypot(zombie.x - x, zombie.y - y) < minDistanceBetweenZombies) {
+        tooClose = true;
+        break;
       }
     }
 
+    if (tooClose) {
+      tries++;
+      continue; // za blisko innego zombie
+    }
+
+    validPosition = true;
+  }
+
+  if (validPosition) {
     zombies.push({ x, y, radius: 20, speed: 0.65, hp: 3, alpha: 1 });
+  }
+  // jeśli nie znaleźliśmy miejsca, to nie spawnuje nowego zombie (nic nie robimy)
 }
+
 
 function spawnShieldItem() {
   if (dayTime) {
@@ -419,7 +430,10 @@ function draw() {
 setInterval(spawnShieldItem, 10000);
 setInterval(() => {
   if (!dayTime && zombies.length < 25) {
-    spawnZombie();
+    for (let i = 0; i < 3; i++) {
+      if (zombies.length >= 25) break;
+      spawnZombie();
+    }
   }
 }, 500);
 
