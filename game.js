@@ -141,7 +141,7 @@ function spawnZombie() {
 
     if (Math.hypot(player.x - x, player.y - y) < 100) {
       tries++;
-      continue; // za blisko gracza
+      continue;
     }
 
     let tooClose = false;
@@ -155,7 +155,7 @@ function spawnZombie() {
 
     if (tooClose) {
       tries++;
-      continue; // za blisko innego zombie
+      continue;
     }
 
     validPosition = true;
@@ -164,7 +164,6 @@ function spawnZombie() {
   if (validPosition) {
     zombies.push({ x, y, radius: 20, speed: 0.65, hp: 3, alpha: 1 });
   }
-  // jeśli nie znaleźliśmy miejsca, to nie spawnuje nowego zombie (nic nie robimy)
 }
 
 

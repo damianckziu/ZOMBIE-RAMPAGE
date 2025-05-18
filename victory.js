@@ -69,7 +69,7 @@ canvas.addEventListener('click', (e) => {
     mouseY >= exitButton.y &&
     mouseY <= exitButton.y + exitButton.height
   ) {
-    window.location.href = 'index.html'; // Przejście do menu
+    window.location.href = 'index.html';
   }
 });
 
@@ -131,8 +131,8 @@ function drawButton(btn) {
   const buttonY = btn.y - (buttonHeight - btn.height) / 2;
 
   const grad = ctx.createLinearGradient(buttonX, buttonY, buttonX, buttonY + buttonHeight);
-  grad.addColorStop(0, '#0e6b9d');   // Górny odcień niebieskiego
-  grad.addColorStop(1, '#2c9bd8');   // Dolny odcień niebieskiego
+  grad.addColorStop(0, '#0e6b9d');
+  grad.addColorStop(1, '#2c9bd8');
 
   ctx.save();
   ctx.shadowColor = 'rgba(100, 200, 255, 0.4)';
@@ -141,7 +141,7 @@ function drawButton(btn) {
   ctx.shadowOffsetY = 0;
 
   ctx.fillStyle = grad;
-  ctx.strokeStyle = '#b0e0ff';  // Jasna niebieska obwódka
+  ctx.strokeStyle = '#b0e0ff';
   ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.roundRect(buttonX, buttonY, buttonWidth, buttonHeight, 25);

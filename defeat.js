@@ -14,7 +14,7 @@ resizeCanvas();
 // ------------------------------
 // TŁO
 // ------------------------------
-const backgroundColor = 'rgba(30, 0, 0, 1)'; // ciemniejsze tło na porażkę
+const backgroundColor = 'rgba(30, 0, 0, 1)';
 
 // ------------------------------
 // OBRAZEK DEFEAT
@@ -69,7 +69,7 @@ canvas.addEventListener('click', (e) => {
     mouseY >= exitButton.y &&
     mouseY <= exitButton.y + exitButton.height
   ) {
-    window.location.href = 'index.html'; // Przejście do menu
+    window.location.href = 'index.html';
   }
 });
 

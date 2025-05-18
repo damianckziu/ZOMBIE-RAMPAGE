@@ -71,7 +71,7 @@ canvas.addEventListener('click', (e) => {
     mouseY >= startButton.y &&
     mouseY <= startButton.y + startButton.height
   ) {
-    window.location.href = 'game.html'; // Przejście do gry
+    window.location.href = 'game.html';
   }
 });
 
