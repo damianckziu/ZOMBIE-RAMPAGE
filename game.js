@@ -421,7 +421,7 @@ setInterval(() => {
   if (!dayTime && zombies.length < 25) {
     spawnZombie();
   }
-}, 2000);
+}, 500);
 
 function gameLoop() {
   update();
