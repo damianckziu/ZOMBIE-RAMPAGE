@@ -55,6 +55,12 @@ window.addEventListener('resize', updateButtonPos);
 // ------------------------------
 // OBSŁUGA KLIKNIĘĆ
 // ------------------------------
+
+window.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+
 canvas.addEventListener('click', (e) => {
   const rect = canvas.getBoundingClientRect();
   const mouseX = e.clientX - rect.left;
