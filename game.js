@@ -435,7 +435,7 @@ setInterval(() => {
       spawnZombie();
     }
   }
-}, 500);
+}, 3000);
 
 function gameLoop() {
   update();
