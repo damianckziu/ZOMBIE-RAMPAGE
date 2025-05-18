@@ -57,9 +57,9 @@ window.addEventListener('resize', updateButtonPos);
 // ------------------------------
 
 window.addEventListener('contextmenu', function(e) {
+  console.log("test");
   e.preventDefault();
 });
-
 
 canvas.addEventListener('click', (e) => {
   const rect = canvas.getBoundingClientRect();
