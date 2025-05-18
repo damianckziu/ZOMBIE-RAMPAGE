@@ -150,6 +150,14 @@ function drawMenu() {
   startButton.scale += (startButton.targetScale - startButton.scale) * 0.1;
   drawButton(startButton);
 
+  ctx.save();
+  ctx.fillStyle = '#ffffff';
+  ctx.font = '16px Arial';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText('TWÓRCY: Damian Fitał, Patryk Chudoba, Igor Korpalski', 20, canvas.height - 20);
+  ctx.restore();
+
   requestAnimationFrame(drawMenu);
 }
 
