@@ -91,6 +91,10 @@ let victoryStartTime = null;
 // ------------------------------
 // ZDARZENIA
 // ------------------------------
+window.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
 document.addEventListener('keydown', e => keys[e.key.toLowerCase()] = true);
 document.addEventListener('keyup', e => keys[e.key.toLowerCase()] = false);
 
