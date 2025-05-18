@@ -128,7 +128,6 @@ canvas.addEventListener('mousedown', e => {
 // FUNKCJE DO SPAWN'OWANIA
 // ------------------------------
 function spawnZombie() {
-  if (!dayTime && zombies.length < initialZombieCount + Math.floor((Date.now() - cycleStartTime) / zombieSpawnInterval)) {
     let distanceFromPlayer = Math.random() * (canvas.width / 2) + canvas.width / 4;
     let angle = Math.random() * 2 * Math.PI;
     let x = player.x + Math.cos(angle) * distanceFromPlayer;
@@ -156,7 +155,6 @@ function spawnZombie() {
     }
 
     zombies.push({ x, y, radius: 20, speed: 0.65, hp: 3, alpha: 1 });
-  }
 }
 
 function spawnShieldItem() {
@@ -419,7 +417,11 @@ function draw() {
 // INTERWALIA I PĘTLA GRY
 // ------------------------------
 setInterval(spawnShieldItem, 10000);
-setInterval(spawnZombie, zombieSpawnInterval);
+setInterval(() => {
+  if (!dayTime && zombies.length < 10) { // ogranicz liczbę
+    spawnZombie();
+  }
+}, 10000); // co 10 sekund
 
 function gameLoop() {
   update();
