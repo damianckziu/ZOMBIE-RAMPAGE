@@ -14,7 +14,7 @@ resizeCanvas();
 // ------------------------------
 // TŁO
 // ------------------------------
-const backgroundColor = 'rgba(52,64,0,1)';
+const backgroundColor = 'rgb(12, 108, 146)';
 
 // ------------------------------
 // OBRAZEK VICTORY
