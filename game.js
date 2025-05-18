@@ -430,12 +430,12 @@ function draw() {
 setInterval(spawnShieldItem, 10000);
 setInterval(() => {
   if (!dayTime && zombies.length < 25) {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
       if (zombies.length >= 25) break;
       spawnZombie();
     }
   }
-}, 500);
+}, 1000);
 
 function gameLoop() {
   update();
