@@ -131,17 +131,17 @@ function drawButton(btn) {
   const buttonY = btn.y - (buttonHeight - btn.height) / 2;
 
   const grad = ctx.createLinearGradient(buttonX, buttonY, buttonX, buttonY + buttonHeight);
-  grad.addColorStop(0, '#3f5000');
-  grad.addColorStop(1, '#5c6f1b');
+  grad.addColorStop(0, '#0e6b9d');   // Górny odcień niebieskiego
+  grad.addColorStop(1, '#2c9bd8');   // Dolny odcień niebieskiego
 
   ctx.save();
-  ctx.shadowColor = 'rgba(185,255,110,0.4)';
+  ctx.shadowColor = 'rgba(100, 200, 255, 0.4)';
   ctx.shadowBlur = 20;
   ctx.shadowOffsetX = 0;
   ctx.shadowOffsetY = 0;
 
   ctx.fillStyle = grad;
-  ctx.strokeStyle = '#d1c759';
+  ctx.strokeStyle = '#b0e0ff';  // Jasna niebieska obwódka
   ctx.lineWidth = 3;
   ctx.beginPath();
   ctx.roundRect(buttonX, buttonY, buttonWidth, buttonHeight, 25);
