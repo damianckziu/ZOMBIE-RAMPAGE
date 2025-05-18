@@ -48,7 +48,7 @@ let player = {
   y: canvas.height / 2,
   radius: 20,
   angle: 0,
-  speed: 1,
+  speed: 5,
   hp: 100,
   shield: 0,
   stamina: 100,
