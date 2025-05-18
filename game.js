@@ -298,7 +298,7 @@ function update() {
         } else {
           player.hp -= 20;
           if (player.hp <= 0) {
-            window.location.href = 'index.html';
+            window.location.href = 'defeat.html';
           }
         }
       }
