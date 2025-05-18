@@ -57,7 +57,6 @@ window.addEventListener('resize', updateButtonPos);
 // ------------------------------
 
 window.addEventListener('contextmenu', function(e) {
-  console.log("test");
   e.preventDefault();
 });
 
